@@ -200,7 +200,7 @@ public class DriveBase {
         double raiseVelocity = .2;
         double lowerVelocity = -.5;
         double intakeVelocity = .5;
-        double extakeVelocity = -.5;
+        double extakeVelocity = -.75;
 
         //System.out.print("In Arm");
         //Timer timer = new Timer();
@@ -307,6 +307,18 @@ public class DriveBase {
 
         rightfrontmotor.set(throttle);
         rightrearmotor.set(throttle);
+    
+    }
+
+    public void turnDrive() {
+        double throttle = driveController.calculate(getLeftPosition());
+
+        leftfrontmotor.set(throttle);
+        leftrearmotor.set(throttle);
+
+        rightfrontmotor.set(throttle);
+        rightrearmotor.set(throttle);
+
     }
 
     public void setAngle(double angle) {
